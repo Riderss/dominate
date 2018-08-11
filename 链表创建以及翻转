@@ -30,7 +30,7 @@ void reverselist(Nodeptr *head){
   curr=*head;
   rear=*head;
   while(curr!=NULL){
-    rear=durr->next;
+    rear=curr->next;
     curr->next=prev;
     prev=curr;
     curr=rear;
