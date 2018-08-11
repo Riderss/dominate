@@ -1,0 +1,74 @@
+#include<stdio.h>
+#include<malloc.h>
+
+typedef struct node{
+  int data;
+  struct node *next;
+}Node,*Nodeptr;
+void creatList(Nodeptr *head){
+  *head=(Nodeptr)malloc(sizeof(Node));
+  (*head)->data=0;
+  (*head)->next=NULL;
+}
+int InsertList(Nodeptr *head,int data){
+  Nodeptr p;
+  if(*head==NULL)
+  p=NULL;
+  else
+  p=*head;
+  *head=(Nodeptr)malloc(sizeof(Node));
+  (*head)->data=data;
+  (*head)->next=p;
+}
+void reverselist(Nodeptr *head){
+  if(*head==NULL||*head->next==NULL)
+  return -1;
+  Nodeptr prev;
+  Nodeptr curr;
+  Nodeptr rear;
+  prev=NULL;
+  curr=*head;
+  rear=*head;
+  while(curr!=NULL){
+    rear=durr->next;
+    curr->next=prev;
+    prev=curr;
+    curr=rear;
+  }
+  *head=prev;
+}
+void printList(Nodeptr head){
+  Nodeptr p;
+  p=head;
+  while(p!=NULL){
+    printf("%d->",p->data);
+    p=p->next;
+  }
+  printf("\n");
+}
+int main(){
+  Nodeptr head=NULL;
+  InsertList(&head,3);
+  InsertList(&head,2);
+  InsertList(&head,7);
+  InsertList(&head,6);
+  InsertList(&head,7);
+  printList(head);
+  reverselist(&head);
+  printList(head);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
